@@ -27,9 +27,19 @@
             <nav class="main-content__nav posts__nav">
                 <div th:each="post: ${topic.posts}">
                     <a th:text="${post.title}" th:href="'/posts/'+${post.id}" href="#"
-                       class="posts__nav-link"></a>
+                       class="posts__nav-link"></a><br><br>
                 </div>
             </nav>
+            <form class = "post-form" th:action="'/topics/'+${topic.id}" method="post">
+                <label for="post">Add a post</label><br>
+                <input type="text" id="post" name="title" value=""><br>
+                <label for="content">Content:</label><br>
+                <input class="contentBox" type="text" id="content" name="content" value=""><br>
+                <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author" value=""><br>
+                <button type="submit"> Submit Post</button>
+
+            </form>
         </section>
     </main>
 </div>

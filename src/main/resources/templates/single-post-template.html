@@ -26,8 +26,17 @@
                 <h2 th:text="${post.title}" class="post__title main-content__topic-title">Post Title</h2>
                 <p th:text="${post.content}" class="post__content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque blanditiis, aut quae fuga id quis ut. 
                     Eligendi necessitatibus blanditiis officia, odio deleniti natus molestiae fugiat ex quod vel aliquam illum.
-                </p>
-            </section>
+                </p><br><br>
+                <p th:text="'Written by '+${post.author}"></p>
+            </section><br>
+            <form class = "hashtag form" th:action="'/posts/'+${post.id}" method="post">
+                <label for="hashtag">Add a Hashtag</label><br>
+                <input type="text" id="hashtag" name="addHashtag" value=""><br>
+                <label for="desc">Description:</label><br>
+                <input type="text" id="desc" name="desc" value=""><br>
+                <button type="submit"> Submit Hashtag</button>
+
+            </form>
         </main>
     </div>
 
